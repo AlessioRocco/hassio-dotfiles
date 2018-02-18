@@ -47,7 +47,6 @@ silent! colorscheme gruvbox               " Use gruvbox theme
 
 "" Airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tmuxline#enabled = 0
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
