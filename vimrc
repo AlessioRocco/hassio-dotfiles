@@ -15,7 +15,6 @@ Plug 'cohama/lexima.vim'                     " Automatically closing pair stuff
 Plug 'vim-scripts/matchit.zip'               " extended % matching for HTML, LaTeX, and many other languages
 Plug 'airblade/vim-gitgutter'                " A Vim plugin which shows a git diff in the gutter (sign column)
 Plug 'tpope/vim-fugitive'                    " fugitive.vim: a Git wrapper so awesome, it should be illegal
-Plug 'benmills/vimux'                        " vim plugin to interact with tmux
 Plug 'christoomey/vim-tmux-navigator'        " Seamless navigation between tmux panes and vim splits
 Plug 'tmux-plugins/vim-tmux-focus-events'    " Make terminal vim and tmux work better together
 Plug 'edkolev/tmuxline.vim'                  " Tmux statusline generator with support for powerline symbols and airline
