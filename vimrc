@@ -30,7 +30,7 @@ set noswapfile
 set number                        " Display line numbers
 set numberwidth=5                 " Change line numbers column width
 set background=dark               " Use gruvbox dark theme
-colorscheme gruvbox               " Use gruvbox theme
+silent! colorscheme gruvbox               " Use gruvbox theme
 
 " NerdTree
 let g:NERDTreeShowLineNumbers=1
