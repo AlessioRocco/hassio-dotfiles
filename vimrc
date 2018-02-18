@@ -44,7 +44,7 @@ set noswapfile
 set number                        " Display line numbers
 set numberwidth=5                 " Change line numbers column width
 set background=dark               " Use gruvbox dark theme
-!silent colorscheme gruvbox               " Use gruvbox theme
+silent! colorscheme gruvbox               " Use gruvbox theme
 
 "" Airline
 let g:airline_powerline_fonts = 1
