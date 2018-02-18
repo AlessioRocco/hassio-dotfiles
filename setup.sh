@@ -10,15 +10,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #==============
 # Variables
 #==============
-dotfiles_dir=~/hassio-dotfiles
+dotfiles_dir=/hassio-dotfiles
+user_dir=/root
 
 #==============
 # Delete existing dot files and folders
 #==============
-rm -rf ~/.vim > /dev/null 2>&1
-rm -rf ~/.vimrc > /dev/null 2>&1
+rm -rf $user_dir/.vimrc > /dev/null 2>&1
 
 #==============
 # Create symlinks in the home folder
 #==============
-ln -sf $dotfiles_dir/vimrc ~/.vimrc
+ln -sf $dotfiles_dir/vimrc $user_dir/.vimrc
