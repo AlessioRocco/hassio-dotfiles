@@ -1,15 +1,29 @@
-" Plugins
+if &compatible
+  set nocompatible
+end
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundle')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-sensible'                    " Defaults everyone can agree on
+Plug 'ctrlpvim/ctrlp.vim'                    " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
+Plug 'scrooloose/nerdtree'                   " A tree explorer plugin for vim
+Plug 'bling/vim-airline'                     " Lean & mean status/tabline for vim that's light as air
+Plug 'tpope/vim-commentary'                  " commentary.vim: comment stuff out
+Plug 'editorconfig/editorconfig-vim'         " EditorConfig plugin for Vim
+Plug 'tpope/vim-surround'                    " surround.vim: quoting/parenthesizing made simple
+Plug 'cohama/lexima.vim'                     " Automatically closing pair stuff
+Plug 'vim-scripts/matchit.zip'               " extended % matching for HTML, LaTeX, and many other languages
+Plug 'airblade/vim-gitgutter'                " A Vim plugin which shows a git diff in the gutter (sign column)
+Plug 'tpope/vim-fugitive'                    " fugitive.vim: a Git wrapper so awesome, it should be illegal
+Plug 'benmills/vimux'                        " vim plugin to interact with tmux
+Plug 'christoomey/vim-tmux-navigator'        " Seamless navigation between tmux panes and vim splits
+Plug 'tmux-plugins/vim-tmux-focus-events'    " Make terminal vim and tmux work better together
+Plug 'edkolev/tmuxline.vim'                  " Tmux statusline generator with support for powerline symbols and airline
+Plug 'sheerun/vim-polyglot'                  " A solid language pack for Vim.
+Plug 'morhetz/gruvbox'                       " Retro groove color scheme for Vim
 
-" Initialize plugin system
 call plug#end()
 
-" Basic Config
 let g:mapleader = ","
 set clipboard+=unnamed            " Copy and Paste from the system clipboard
 set hidden                        " Enables to switch between unsaved buffers and keep undo history
@@ -30,17 +44,32 @@ set noswapfile
 set number                        " Display line numbers
 set numberwidth=5                 " Change line numbers column width
 set background=dark               " Use gruvbox dark theme
-silent! colorscheme gruvbox               " Use gruvbox theme
+colorscheme gruvbox               " Use gruvbox theme
+
+"" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 0
+
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " NerdTree
+let g:NERDTreeIgnore=['\.rbc$', '\~$']
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeRespectWildIgnore=1
 
-" Keymaps
+""" Keymaps
+
 nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gb :Gbrowse<cr>
 inoremap jj <esc>
 nnoremap j gj
 nnoremap k gk
@@ -61,3 +90,10 @@ nnoremap <leader>w :write<cr>
 nnoremap <leader>q :quit<cr>
 nnoremap <leader>d :bd<cr>
 nnoremap <leader>Q :quitall<cr>
+map <f7> gg=G
+map <leader>\| :vsplit<cr>
+map <leader>- :split<cr>
+nnoremap <silent> <A-Right> :call utils#intelligentVerticalResize('right')<cr>
+nnoremap <silent> <A-Left> :call utils#intelligentVerticalResize('left')<cr>
+nnoremap <silent> <A-Up> :resize +1<cr>
+nnoremap <silent> <A-Down> :resize -1<cr>
