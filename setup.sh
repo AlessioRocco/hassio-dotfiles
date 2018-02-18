@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #==============
-# Install PlugVim
+# Install Vim Plug
 #==============
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -22,3 +22,8 @@ rm -rf $user_dir/.vimrc > /dev/null 2>&1
 # Create symlinks in the home folder
 #==============
 ln -sf $dotfiles_dir/vimrc $user_dir/.vimrc
+
+#==============
+# Install vim Plugins
+#==============
+vim +PlugInstall +qall
