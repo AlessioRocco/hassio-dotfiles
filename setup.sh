@@ -14,13 +14,9 @@ dotfiles_dir=/hassio-dotfiles
 user_dir=/root
 
 #==============
-# Delete existing dot files and folders
-#==============
-rm -rf $user_dir/.vimrc > /dev/null 2>&1
-
-#==============
 # Create symlinks in the home folder
 #==============
+ln -sf $dotfiles_dir/editorconfig $user_dir/.editorconfig
 ln -sf $dotfiles_dir/vimrc $user_dir/.vimrc
 
 #==============
