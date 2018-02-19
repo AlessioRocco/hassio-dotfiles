@@ -5,6 +5,7 @@ end
 call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-sensible'                    " Defaults everyone can agree on
+Plug 'jszakmeister/vim-togglecursor'         " Toggle the cursor shape in the terminal for Vim.
 Plug 'ctrlpvim/ctrlp.vim'                    " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'scrooloose/nerdtree'                   " A tree explorer plugin for vim
 Plug 'bling/vim-airline'                     " Lean & mean status/tabline for vim that's light as air
